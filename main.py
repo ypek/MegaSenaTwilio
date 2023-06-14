@@ -34,27 +34,27 @@ def gerar_log(contador, dezenas_jogador):
 
 # Etapa 4: Enviar um SMS para o celular do integrante
 def enviar_sms(contador, dezenas_jogador):
-    account_sid = 'AC4178ca1094a96f26c17099ca9e3a0b2c'
-    auth_token = 'ae574bcdda7373623461d308ad843b46'
+    account_sid = ''
+    auth_token = ''
     client = Client(account_sid, auth_token)
     dezenas_sorteio = sortear_dezenas()
     message = client.messages.create(
         body=f"Você ganhou na Mega Sena! Total de sorteios: {contador}. Dezenas apostadas: {dezenas_jogador}. Dezenas sorteadas: {dezenas_sorteio}",
-        from_='14302372837',
-        to='5554999213874'
+        from_='',
+        to=''
     )
     print(f"Mensagem enviada: {message.sid}")
 
 # Método para verificar se o envio de SMS está funcionando
 def verificar_envio_sms():
-    account_sid = 'AC4178ca1094a96f26c17099ca9e3a0b2c'
-    auth_token = 'ae574bcdda7373623461d308ad843b46'
+    account_sid = ''
+    auth_token = ''
     client = Client(account_sid, auth_token)
     try:
         message = client.messages.create(
             body="Sua conta ITAU FOI HACKEADA!!!! FDP",
-            from_='14302372837',
-            to='5554999213874'
+            from_='',
+            to=''
         )
         print("SMS enviado com sucesso!")
         print(f"Mensagem SID: {message.sid}")
